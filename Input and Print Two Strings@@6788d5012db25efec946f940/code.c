@@ -1,7 +1,9 @@
 #include<stdio.h>
 int main(){
-    double n;
-    scanf("%lf",&n);
-    printf("You entered: %.4f",n);
+    char a[100],b[100];
+    scanf("%s",&a);
+    scanf("%s",&b);
+    printf("You entered: %s",a);
+    printf(" and %s",b);
     return 0;
 }
