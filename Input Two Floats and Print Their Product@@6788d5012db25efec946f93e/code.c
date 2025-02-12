@@ -1,9 +1,9 @@
 #include<stdio.h>
 int main(){
-    char a[100],b[100];
-    scanf("%s",&a);
-    scanf("%s",&b);
-    printf("You entered: %s",a);
-    printf(" and %s",b);
+    float a,b;
+    scanf("%d",&a);
+    scanf("%d",&b);
+    float product=a*b;
+    printf("Product: %.2f",product);
     return 0;
 }
