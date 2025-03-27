@@ -4,11 +4,9 @@ int main() {
     int n;
 
     // Reading the number of elements in the array
-    printf("Enter the number of elements: ");
     scanf("%d", &n);
 
     int arr[n];
-    printf("Enter %d elements: ", n);
 
     // Reading the array elements
     for (int i = 0; i < n; i++) {
