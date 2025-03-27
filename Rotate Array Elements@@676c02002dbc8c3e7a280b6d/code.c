@@ -1,42 +1,40 @@
 #include <stdio.h>
 
-void rotateArray(int arr[], int n, int k) {
-    k = k % n; // Handle cases where k >= n
-    int temp[k];
-
-    
-    for (int i = 0; i < k; i++) {
-        temp[i] = arr[n - k + i];
+void reverse(int arr[], int start, int end) {
+    while (start < end) {
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
     }
+}
 
-    
-    for (int i = n - 1; i >= k; i--) {
-        arr[i] = arr[i - k];
-    }
-
-    
-    for (int i = 0; i < k; i++) {
-        arr[i] = temp[i];
-    }
+void rotateArray(int arr[], int N, int K) {
+    K = K % N;  // Optimize rotations
+    reverse(arr, 0, N - 1);       // Step 1: Reverse the entire array
+    reverse(arr, 0, K - 1);       // Step 2: Reverse the first K elements
+    reverse(arr, K, N - 1);       // Step 3: Reverse the rest
 }
 
 int main() {
-    int n;
-    scanf("%d", &n); 
-
-    int arr[n];
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]); 
+    int N, K;
+    printf("Enter the size of the array: ");
+    scanf("%d", &N);
+    int arr[N];
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
     }
+    printf("Enter the number of rotations: ");
+    scanf("%d", &K);
 
-    int k;
-    scanf("%d", &k); 
+    rotateArray(arr, N, K);
 
-    rotateArray(arr, n, k);
-
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]); 
+    printf("Rotated Array: ");
+    for (int i = 0; i < N; i++) {
+        printf("%d ", arr[i]);
     }
-
     return 0;
 }
+
