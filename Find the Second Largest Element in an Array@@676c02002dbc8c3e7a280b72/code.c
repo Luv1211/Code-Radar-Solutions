@@ -25,11 +25,11 @@ int main() {
     int n;
 
     // Reading the number of elements
-    printf("Enter the number of elements: ");
+    printf("");
     scanf("%d", &n);
 
     int arr[n];
-    printf("Enter %d space-separated elements: ", n);
+    printf("", n);
 
     // Reading the array elements
     for (int i = 0; i < n; i++) {
