@@ -34,7 +34,7 @@ int main() {
     }
 
     int peak = findFirstPeak(arr, n);
-    printf("The first peak element is: %d\n", peak);
+    printf("%d\n", peak);
 
     return 0;
 }
