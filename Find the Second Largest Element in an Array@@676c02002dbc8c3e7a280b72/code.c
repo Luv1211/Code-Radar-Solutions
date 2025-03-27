@@ -5,7 +5,8 @@ int findSecondLargest(int arr[], int n) {
         return -1; // Not enough elements
     }
 
-    int largest = arr[0], secondLargest = -1;
+    int largest = arr[0];
+    int secondLargest = -2147483648; // Initialize to the smallest possible integer
 
     for (int i = 1; i < n; i++) {
         if (arr[i] > largest) {
@@ -16,18 +17,20 @@ int findSecondLargest(int arr[], int n) {
         }
     }
 
-    return secondLargest;
+    // Check if a valid second largest element exists
+    return (secondLargest == -2147483648) ? -1 : secondLargest;
 }
 
 int main() {
     int n;
 
     // Reading the number of elements
-  
+    printf("Enter the number of elements: ");
     scanf("%d", &n);
 
     int arr[n];
-    
+    printf("Enter %d space-separated elements: ", n);
+
     // Reading the array elements
     for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
@@ -40,4 +43,3 @@ int main() {
 
     return 0;
 }
-
